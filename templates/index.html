@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume ATS Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AI Resume ATS Analyzer</h1>
+    <p class="subtitle">Upload your resume and compare it with a job description</p>
+
+    <!-- Form Card -->
+    <div class="card">
+        <form method="POST" enctype="multipart/form-data" onsubmit="showLoader()">
+
+            <label>Upload Resume (PDF / DOCX)</label>
+            <input type="file" name="resume_file">
+
+            <span class="or">OR</span>
+
+            <label>Paste Resume</label>
+            <textarea name="resume" rows="6"></textarea>
+
+            <label>Job Description</label>
+            <textarea name="job_description" rows="6" required></textarea>
+
+            <button type="submit">Analyze Resume</button>
+        </form>
+
+        <!-- Loader -->
+        <div id="loader" class="loader hidden">
+            Analyzing resume, please wait...
+        </div>
+    </div>
+
+    {% if ats_score %}
+    <!-- ATS Score Card -->
+    <div class="card">
+        <h2>ATS Score</h2>
+        <div class="progress">
+            <div class="progress-fill" style="width: {{ ats_score }}%;">
+                {{ ats_score }}%
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if feedback %}
+    <!-- Feedback Card -->
+    <div class="card">
+        <h2>AI Feedback</h2>
+        <pre>{{ feedback }}</pre>
+    </div>
+    {% endif %}
+
+</div>
+
+<script>
+function showLoader() {
+    document.getElementById("loader").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

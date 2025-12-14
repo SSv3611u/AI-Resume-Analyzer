@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+}
+
+textarea, input[type="file"] {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.or {
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    color: #999;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+.progress {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #4CAF50, #66BB6A);
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 30px;
+    transition: width 1s ease-in-out;
+}
+
+pre {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+}
+
+.loader {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 10px;
+    }
+}
